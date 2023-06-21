@@ -1,0 +1,848 @@
+*{
+    font-family:'Inria Sans', sans-serif;
+} /* Fonte de todo html */    
+
+#corpot
+{
+    margin-top: 8rem;
+} /* Divisão entre o topo da pagina com o conteudo */
+
+#tituloInicialp
+{
+    text-align: center; 
+    color: rgb(37, 58, 68);
+    padding-bottom: 3rem; 
+    font-size: 50px;
+    font-weight: bold;
+    font-family: 'Inria Sans', sans-serif; 
+} /* Titulos Principais */
+
+#background 
+{
+    background-color: #fafafa;
+    background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+  
+#imgBotoes {
+    padding-bottom: 2px;
+} /* Formataõ das imagens dentro dos botões */
+
+/* main.blade */
+    #mensagem {
+        margin-bottom: 0px;
+    }  /* Formtação da caixa de mensagem */
+
+    #mensagemCard {
+        position: fixed;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 9999;
+        background-color: #03d649b6;
+        color: #ffffff;
+        font-size: 20px;
+        align-items: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        color: #fff;
+        animation: slideDown 0.5s forwards, fadeOut 0.5s 4.5s forwards;
+        width: 300px; /* Defina a largura desejada */
+        max-width: 90%; /* Define a largura máxima para evitar esticamento em telas pequenas */
+    }  
+    @keyframes slideDown {
+        0% {
+        top: -100%;
+        }
+        100% {
+        top: 50%;
+        }
+    } @keyframes fadeOut {
+        0% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+    }
+
+    /* NavBar (NB) */
+
+        #nav.navbar {
+            height: 50px;
+            padding-top: 5px;
+            background-color: #1c1b1d;
+            border: 0;
+        } /* Cor e borda */
+
+        #botoesEntrarNav.btn-custom {
+            margin: 0px;
+            color: #ffffff;             
+        } /* Cor dos Botões de Entrar */
+
+            #botoesEntrarNav.btn-custom:hover {
+                background-color: #921992;
+                font-weight: bolder;
+                transform: scale(1.01);
+                transition: all 0.01s ease-in-out;
+            } /* Animação dos Botões de Entrar */
+
+        #botoesCriarCoNav.btn-custom {
+            margin-right: 10px;
+            margin-left: 10px;
+            background-color: #7e18ad;
+            color: #ffffff; 
+        } /* Cor dos Botões de Criar Conta */
+
+            #botoesCriarCoNav.btn-custom:hover {
+                background-color: #ff00ff;
+                color: #ffffff;
+                font-weight: bold;
+                transform: scale(1.01);
+                transition: all 0.01s ease-in-out;
+            } /* Animação dos Botões de Criar Conta */
+
+        #modoDarkNB {
+            padding-right: 5px;
+        } /* formatação do botão de modo escuro */
+
+    /* NB */
+
+
+    /* SideBar (SB) */
+      
+        #tituloInicialsb {
+            text-align: center; 
+            color: white;
+            font-family: 'Inria Sans', sans-serif; 
+            font-weight: 400;
+            padding-left: 10px;
+        } /* Titulo da Side Bar */    
+
+        #sidebar-linhaCima.btn-custom {
+            background-color: #1c1b1d;
+            height: 50px;
+            border: 0;
+        } /* Barra superior  */
+
+        #imgOpcoes {
+            width: 30px;
+        } /* Formatação do icon do porco na barra superior */
+        
+        #botoesImg {
+            padding-right: 7px;
+            padding-bottom: 4px;
+        } /* Separação da imagem pro texto */
+        
+        #botoesMenus.btn-custom {
+            color: #ffffff; 
+            width: 100%;
+            margin-top: 5px;
+        } /* Cor dos Botões */
+
+            #botoesMenus.btn-custom:hover {
+                background-color: #b811b8; 
+                color: #ffffff;
+                transform: scale(1.01);
+                transition: all 0.01s ease-in-out;
+            } /* Animação dos Botões */
+
+        #botoesMenusS.btn-custom
+        {
+            background-color: #b811b8;
+            color: #ffffff;
+        } /* Cor dos Botão de sair */ 
+
+        #botoesMenusS.btn-custom:hover 
+        {
+            background-color: #fa294c;
+            color: #ffffff;
+            transform: scale(1.01);
+            transition: all 0.01s ease-in-out;
+        } /* Cor dos Botão de sair: Hover */
+
+    /* SB */
+
+/* main.blade */
+
+
+
+
+
+/* index.blade */
+
+    #tituloCardIndex1 {
+        color: white;
+        padding-left: 5px;
+        text-align: start; 
+        font-size: larger;
+        font-weight: bold;
+        font-family:'Inria Sans', sans-serif
+    } /* Index1 = Destaque */
+
+    #tituloCardIndex2 {
+        padding-left: 5PX;
+        text-align: start; 
+        font-size: larger;
+        font-weight: normal;
+        font-family:'Inria Sans', sans-serif
+    } /* Index2 = Sem Destaque */
+        
+    #cardBodyIndex1 {
+        border: 0;
+        border-radius: 10px;
+        font-weight: bold;
+        padding-left: 3px;
+        padding-bottom: 3px;
+        padding-right: 3PX;
+        color: #ffffff; 
+        background: linear-gradient(270deg, rgba(255, 64, 129, 0.6) 0%, rgba(255, 64, 129, 0) 100%), #7C4DFF;
+        box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.281);
+    } /* Index1 = Destaque */
+
+        #cardBodyIndex1.card:hover {
+            transform: scale(1.01);
+            transition: all 0.01s ease-in-out;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.50);
+        } /* Joga o card pra frente. Função basica do hover né */
+
+    #cardBodyIndex1 a{
+        color:inherit;
+        text-decoration: inherit;
+        font-family: inherit;
+        font-weight: inherit;
+        font-size:inherit;
+    } /* Tirando o sublinhado azul da descrição? */
+
+    #cardBodyIndex2 {
+        border: 0;
+        border-radius: 10px;
+        font-weight: normal;
+        padding-left: 3px;
+        padding-bottom: 3px;
+        padding-right: 3PX;
+        color: #ffffff; 
+        background: linear-gradient(to bottom right, rgb(188, 63, 212) 10%,rgb(39, 11, 110) 100%);
+        box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.281);
+    } /* Index2 = Sem Destaque */
+
+        #cardBodyIndex2.card:hover {
+            transform: scale(1.01);
+            transition: all 0.01s ease-in-out;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.50);
+        } /* Joga o card pra frente. Função basica do hover né */ 
+
+    #cardBodyIndex2 a{
+        color:inherit;
+        text-decoration: inherit;
+        font-family: inherit;
+        font-weight: inherit;
+        font-size:inherit;
+    } /* Tirando o sublinhado azul da descrição? */
+               
+    #cardDescIndex {
+        background-color: #ffffff;
+        color: #1c1b1d;
+        font-weight: normal;
+        text-align: justify;
+        font-size: 16px;
+        padding: 10px;
+        padding-bottom: 5px;
+        
+        line-height: 23px;
+
+        border-radius: 10px 10px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        height: 100%;
+
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 5;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    } /* Formatação da caixa de descrição */ 
+
+    #cardJenalaIndex.card-body {
+        padding-left: 5px; 
+        padding-bottom: 5px; 
+        padding-right: 5px;
+    } /* Deixando o corpo dos cards mais finos, para parecer mais "janelas" */
+    
+/* index.blade */
+
+
+
+
+
+/* login.blade - Area de Login */
+
+
+        #tituloPlaceH {
+            padding-bottom: 5px;
+            padding-left: 9px;
+            padding-right: 9px;
+        } /* Formatação do Titulo dos placeholders */
+
+        #plcaceHoldersL {
+            padding-bottom: 18px;
+            padding-left: 9px;
+            padding-right: 9px;
+        } /* Formatação dos placeholders */
+
+        #checkLembrarU {
+            margin-left: 0%;
+            padding-left: 9px;
+            padding-top: 6px;
+        } /* Formatação do check */
+
+        #lembrarUsuario {
+            padding-bottom: 15px;
+            padding-left: 6px;
+        } /* Formatação texto Lembrar de mim */
+        
+        #botaoEntrar.btn-custom {
+            background-color: #14b69b;
+            color: #ffffff;
+            border: none;
+            width: 100%;
+            margin-bottom: 16px;
+        } /* Cor do botão de Entrar */
+
+            #botaoEntrar.btn-custom:hover {
+                background-color: #0a9c84;
+                color: #ffffff;
+                font-weight: bold;
+                transform: scale(1.01);
+                transition: all 0.01s ease-in-out;
+            } /* Animação do botão de Entrar */
+        
+        #botaoCriarCo2.btn-custom {
+            background-color: #1aa891;
+            color: #ffffff;
+            border: none;
+            width: 100%;
+        } /* Cor do botão de Entrar */
+
+            #botaoCriarCo2.btn-custom:hover {
+                background-color: #087563;
+                color: #ffffff;
+                font-weight: bold;
+                transform: scale(1.01);
+                transition: all 0.01s ease-in-out;
+            } /* Animação do botão de Entrar */    
+
+        #botaoCriarCo.btn-custom {
+            background-color: #2d79d1;
+            color: #ffffff;
+            border: none;
+            width: 100%;
+        } /* cor do botão de Criar Conta */
+
+            #botaoCriarCo.btn-custom:hover {
+                background-color: #104b8f;
+                color: #ffffff;
+                
+                font-weight: bolder;
+                transform: scale(1.01);
+                transition: all 0.01s ease-in-out;
+            } /* Animação do botão de Entrar */
+
+        #botaoEsqueciS.btn-custom {
+            
+            color: #ffffff;
+            font-style: italic;
+            border: none;
+            width: 80%;
+            margin-right: 9px;
+            margin-bottom: 18px;
+        } /* Cor do botão de Esqueceu sua senha */
+
+            #botaoEsqueciS.btn-custom:hover {
+                background-color: #79042e65;
+                color: #ffffff;
+                font-weight: bold;
+                transform: scale(1.01);
+                transition: all 0.01s ease-in-out;
+            } /* Animação do botão de Entrar */
+
+        #footerAreaL {
+            background-color: #3131318a;
+            border-radius: 0px 0px 5px 5px;
+            padding: 10px;
+            margin-top: 10px;;
+        } /* Cor do Footer */
+
+        #tituloCardlogin {
+            font-size: 24px;
+            align-self: center;
+            padding-top: 10px;
+            padding-bottom: 20px;
+            font-weight: bold;
+            color: rgb(255, 255, 255);
+            border: none;
+            background-color: transparent; 
+        } /* Formatação do titulo do card */
+
+        #cardLogin {
+            border: 0;
+            border-radius: 5px;
+            padding: 0%;
+            color: #ffffff; 
+            background: linear-gradient(270deg, #FF4081 0%, rgba(255, 64, 129, 0) 100%), #7C4DFF;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.50);
+        } /* Formatação do header da caixa de login */
+
+        #cardLogin2 {
+            border: 0;
+            border-radius: 5px;
+            padding: 0%;
+            color: #ffffff; 
+            background: linear-gradient(270deg, #FF4081 0%, rgba(255, 64, 129, 0) 100%), #7C4DFF;
+        } /* Formatação da caixa de login */
+     
+/* login  */
+
+
+
+
+
+/* courses.blade - Criar Curso/Aula/Avaliação/Teste - Editar Curso/Aula/Avaliação/Teste*/
+
+    #tituloCriarCurso {
+        text-align: start; 
+        font-size: 18px;
+        padding: 5px; 
+        font-weight: bold;
+    } /* Formatção do titulos encima do placesholder */
+
+    #descricaoCriarCurso {
+        text-align: start; 
+        font-size: 16px;
+        padding: 5px; 
+    } /* Formatção da descrição encima do placesholder */
+
+    #placeholderTitulo {
+        font-weight: bold;
+        font-size: 14px;
+    } /* Formatção do placeholder do Titulo */
+
+    #placeholderDesc {
+        height: 120px;
+        font-size: 14px;
+    } /* Formatção do placeholder da Descrição */
+
+    #TituloTabelaDepoisD {
+        margin: 15px; 
+        font-weight: bold;
+    } /* Titulo depois da Descrição */
+
+    #botaoVoltar.btn-custom {
+        background-color: #42129b;
+        color: #ffffff;
+        padding: 7px
+    }
+    
+        #botaoVoltar.btn-custom:hover {
+            background-color: #25085a;
+            color: #ffffff;
+            transform: scale(1.01);
+            transition: all 0.01s ease-in-out;
+        }
+    
+    #botaoAdicionarAula.btn-custom {   
+            margin: 10px;
+            width: 130px;
+            background-color: #7e0a7e;
+            color: #ffffff;
+            border: 0; 
+        } /* Cor do botão criar Aula */ 
+
+        #botaoAdicionarAula.btn-custom:hover {   
+            background-color: #500d50;
+            color: #ffffff;
+            font-weight: bold;
+            border: 0; 
+            transform: scale(1.01);
+            transition: all 0.01s ease-in-out;
+        }   .animated-button {
+            background-image: linear-gradient(to left, #8b5bff, #ff4b8b);
+            background-size: 200% 100%;
+            transition: background-position 0.5s;
+            animation: gradientAnimation 2s infinite;
+        } /* Animação do botão criar Aula */ 
+        
+        .animated-button:hover {
+            animation: gradientAnimation 2s infinite;
+
+        }   @keyframes gradientAnimation {
+        0% {
+            background-position: right;
+        }
+        50% {
+            background-position: left;
+        }
+        100% {
+            background-position: right;
+        }
+        } /* Animação do botão criar Aula */ 
+
+    #botaoCriarC.btn-custom {
+        padding: 7px; 
+        font-size: larger;
+        background-color: #008d6e;
+        margin-top: 10px;
+        margin-bottom: 5px;
+        color: #ffffff;
+        border: 0; 
+    } /* Cor do botão criar Curso */ 
+    
+        #botaoCriarC.btn-custom:hover {  
+            background-color: #008d6e;
+            color: #ffffff;
+            font-weight: bold;
+            border: 0;
+            transform: scale(1.01);
+            transition: all 0.01s ease-in-out;
+        } /* Animação do botão criar Curso */ 
+
+    #botaoCriarAV.btn-custom {
+        padding: 7px; 
+        font-size: larger;
+        background-color: #42129b;
+        margin-top: 10px;
+        margin-right: 5px;
+        margin-bottom: 5px;
+        color: #ffffff;
+        border: 0; 
+    } /* Cor do botão Criar Avaliação e Voltar */ 
+
+        #botaoCriarAV.btn-custom:hover {  
+            background-color: #25085a;;
+            color: #ffffff;
+            font-weight: bold;
+            border: 0;
+            transform: scale(1.01);
+            transition: all 0.01s ease-in-out;
+        } /* Animação do botão Criar Avaliação e Voltar */        
+
+    #botaoAdicionarAula.btn-custom {   
+        margin: 10px;
+        width: 130px;
+        background-color: #7e0a7e;
+        color: #ffffff;
+        border: 0; 
+    } /* Cor do botão criar Aula */ 
+    
+        #botaoAdicionarAula.btn-custom:hover {   
+            background-color: #500d50;
+            color: #ffffff;
+            font-weight: bold;
+            border: 0; 
+            transform: scale(1.01);
+            transition: all 0.01s ease-in-out;
+        } /* Animação do botão criar Aula */  
+        
+        .animated-button {
+            background-image: linear-gradient(to left, #8b5bff, #ff4b8b);
+            background-size: 200% 100%;
+            transition: background-position 0.5s;
+            animation: gradientAnimation 2s infinite;
+        } /* Animação do botão criar Aula */ 
+            
+        .animated-button:hover {
+            animation: gradientAnimation 2s infinite;
+    
+        }   @keyframes gradientAnimation {
+        0% {
+            background-position: right;
+        }
+        50% {
+            background-position: left;
+        }
+        100% {
+            background-position: right;
+        }
+        } /* Animação do botão criar Aula */ 
+        
+    #textoSemAula {
+        margin: 10px;
+        font-size: 15px;
+        font-family: 'Inria Sans', sans-serif;
+        color: #000000;
+        font-weight: bold;
+    } /* Formatação da descrição encima do placesholder */
+
+    #tornarVisisel {
+        padding-left: 6px;
+    } /* Separando o texto da check */    
+
+    #corpoAreasAulas {
+        background-color: #ffffff91;
+        border-radius: 5px;
+        padding: 5%;
+    } /* Corpo da Area dos Cursos */
+
+    #corpoCriarCurso {
+        border: 0;
+        border-radius: 5px;
+        font-weight: bold;
+        margin: 9px;
+        padding: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+        color: #ffffff; 
+        background: linear-gradient(270deg, rgba(255, 64, 129, 0.6) 0%, rgba(255, 64, 129, 0) 100%), #7C4DFF;
+        box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.281);
+    } /* Corpo do Criar Curso */
+
+    #corpoContainerCC {
+        padding-left: 0px; 
+        padding-right: 0px;
+    } /* Formatação do container */
+
+/* courses */
+
+
+
+
+
+/* dashboard.blade */
+
+    #tituloDash {
+        margin-bottom: 10px; 
+        padding-top: 10px;
+        font-weight: bold;
+        color: rgb(255, 255, 255);
+    } /* Formatação do Titulo */
+
+    #tituloCreditosD {
+        font-size: 30px; 
+        margin-bottom: 0%; 
+        margin-left: 9px;
+        margin-bottom: 6px;
+        color: #5a5a5a;
+    }
+    #corpoContainerDash {
+        margin-left: 0px; 
+        margin-right: 0px;
+        display: contents;
+    } /* Formatação do Container */
+
+    #TituloTabelaNu {
+        font-size: 14px;
+        padding-top: 5px;
+        width: 10%;
+    } /* Formatação do Coluna Responsavel: Numero */
+
+    #TituloTabela2No {
+        font-size: 14px;
+        padding-top: 5px;
+        width: 30%;
+    } /* Formatação do Coluna Responsavel: Nome */
+
+    #TituloTabela3Av {
+        font-size: 14px;
+        padding-top: 5px;
+        width: 30%;
+    } /* Formatação do Coluna Responsavel: Avaliação */
+
+    #TituloTabela4Ac {
+        font-size: 14px;
+        padding-top: 5px;
+        width: 30%;
+    } /* Formatação do Coluna Responsavel: Ações */
+
+    #letraDashboard {
+        font-size: 14px;
+        
+    } /* Formatação das letras */
+
+        #linkDashboard.custom-link-animation {
+            margin: 0%;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+            animation: colorChange 4s infinite;
+        }   @keyframes colorChange {
+            0% {
+                color: #800080;
+            }
+            50% {
+                color: #442391;
+            }
+            100% {
+                color: #460046;
+            }
+        } /* Animação do nome de curso */ 
+    
+    #botaoEditar.btn-custom {
+        background-color: #994ae4;
+        margin: 3px; 
+        align-self: center;
+        align-items: center;
+        color: white;
+    } /* Cor do botão de editar */ 
+
+        #botaoEditar.btn-custom:hover {
+            background-color: #472269;
+            transform: scale(1.01);
+            color: white;
+            transition: all 0.01s ease-in-out;
+        } /* Animação do botão de editar */ 
+
+    #botaoDeletar.btn-custom {
+        background-color: #19191a;
+        margin: 3px; 
+        align-self: center;
+        align-items: center;
+        color: white;
+    } /* Cor do botão de deletar */
+    
+        #botaoDeletar.btn-custom:hover {
+            background-color: #461320;
+            color: white;
+            transform: scale(1.01);
+            transition: all 0.01s ease-in-out;
+        } /* Animação do botão de deletar */
+
+    table.table tbody tr {
+        color: rgb(0, 0, 0);  
+    } /* Linhas pretas */ 
+    
+    #corpoTabela {
+        border-radius: 0px 0px 5px 5px;;
+        background-color: #ffffff;
+        padding-left: 4px;
+        padding-right: 4px;
+    } /* Formatação da Tabela */
+
+    #corpoDash {
+        border: 0;
+        border-radius: 5px;
+        padding-right: 20px;
+        padding-left: 20px;
+        padding-bottom: 15px;
+        margin: 9px;
+        color: #ffffff; 
+        background: linear-gradient(270deg, rgba(255, 64, 129, 0.6) 0%, rgba(255, 64, 129, 0) 100%), #7C4DFF;
+        box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.281);
+    } /* Formatação do corpo do DashBoard */
+
+
+
+/* dashboard */
+
+
+
+
+
+/* profile */
+
+        /*imagem profile*/
+        #imagemperfil
+        {
+            width: 160px;
+            height: 160px;
+        }
+
+         /*fonte profile*/
+         #tituloProfileI
+         {
+            font-size: 50px;
+            font-family: 'Inria Sans', sans-serif;
+            text-align: center;
+         }
+
+         /*BORDA DO CONTAINER PROFILE*/
+         #profileborda
+         {  
+            margin-top: 30px;
+            border-width: 2px; 
+            border-color: #000000;
+            border: solid;
+            background-color: whitesmoke;
+            border-radius: 20px;
+            box-shadow: inset 0 0 10px 10px rgb(218, 218, 218);
+         }
+
+         /*TAMANHO TEXTO LABEL TELA DE PROFILE*/
+         #p-label
+         {
+            text-align: left;
+            font-size: 20px;
+            font-family: 'Inria Sans', sans-serif
+         }
+
+         /*AJUSTES DO INPUT DO FORM PROFILE*/
+         #exampleInput1{
+            border-color: black;
+            margin-right: 5px;
+            font-family: 'Inria Sans', sans-serif
+            
+         }
+
+         /*DISPLAY PARA ALINHAR OS ELEMENTOS LADO A LADO*/
+         #displayflex{
+            display: flex;
+         }
+
+
+        
+        /*MARGEM NO FIM DO CONTAINER*/
+        #marginrow
+        {
+            margin-bottom: 40px;
+        }
+
+        /*+55*/
+        #basic-addon1
+        {
+            border-color: rgb(0, 0, 0);
+            width: 50px;
+        }
+
+        /*estilização dos input2*/
+        #exampleInput2{
+            border-color: black;
+            margin-right: 5px;          
+            border-top-right-radius: 5px ;
+            border-bottom-right-radius: 5px ;
+            float: left;
+        }
+
+        /*estilização dos input3*/
+        #exampleInput3
+        {
+            border-color: black;
+            margin-right: 5px;
+        }
+
+        /*ESTILIZAÇÃO DO BOTÃO DE UPLOAD*/
+        #arquivo
+        {
+            display: none;
+        }
+
+        /*ESTILIZAÇÃO DO BOTÃO DE UPLOAD*/
+        #uploadbtn
+        {
+            display: flex;
+            width: 40px;
+            height: 30px;   
+            background: #5C636A;
+            color: white;
+            display: block;
+            cursor: pointer;
+            transition: .5s;
+            border: 1px solid #5C636A;
+            border-radius: 5px;
+            margin-left: 53%;
+        }
+
+        /*ESTILIZAÇÃO DO BOTÃO DE UPLOAD*/
+        #uploadbtn:hover
+        {
+            color: #5C636A;
+            background: rgb(180, 180, 180);
+        }
+
