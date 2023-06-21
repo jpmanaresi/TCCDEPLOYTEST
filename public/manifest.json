@@ -8,7 +8,7 @@
     "theme_color": "#000",
     "icons": [
         {
-            "src": "PorquinhoLogo.svg",
+            "src": "/img/PorquinhoLogo.svg",
             "sizes": "512x512",
             "type": "image/svg",
             "purpose": "any maskable"
