@@ -14,10 +14,6 @@
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Inria+Sans" rel="stylesheet">
     <!---->
-<!-- PWA  -->
-<meta name="theme-color" content="#6777ef"/>
-<link rel="apple-touch-icon" href="{{ asset('logo.PNG') }}">
-<link rel="manifest" href="{{ asset('/manifest.json') }}">
 
     <title>@yield('title')</title>
 
@@ -29,7 +25,7 @@
     <nav class="navbar nav-border fixed-top" id="nav">
       <div class="container-fluid" alt="botaoMenu" >
     
-        <a href="#" class="btn btn-custom d-flex align-items-center" role="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
+        <a href="#" class="btn btn-custom d-flex align-items-center"  role="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
           <div class="col-auto">
             <img width="25px" src="/img/User-60.svg" alt="Icone Usuario">
           </div> 
@@ -45,7 +41,7 @@
               <a href="/login" id="botoesEntrarNav" class="btn btn-custom text-start" type="button" style=""> 
                 Login   
               </a>
-              <a href="/register" id="botoesCriarCoNav" class="btn btn-custom text-start animated-button" type="button" > 
+              <a href="/register" id="botoesCriarCoNav" class="btn btn-custom text-start animated-button" style="margin-top: 6px;" type="button" > 
                 Criar Conta   
               </a>
             </div>
@@ -89,41 +85,41 @@
             </a>
           </div>
 
-          @auth
-      
-          <div class="col-md-6">
-            <a href="/profile" id="botoesMenus" class="btn btn-custom btn-block btn-lg text-start"> 
-              <img id="botoesImg" src="/img/file-person.svg" alt="Icone Perfil">
-              Meu Perfil
-            </a>
-          </div>
-
-          <div class="col-md-6">
-            <a href="/dashboard" id="botoesMenus" class="btn btn-custom btn-block btn-lg text-start"> 
-              <img id="botoesImg"  src="/img/card-list.svg" alt="Icone Cursos"> 
-              Meus Cursos 
-            </a>
-          </div>
-          @if (auth()->user()->usertype ==2)
-          <div class="col-md-6">
-            <a href="/courses/create" id="botoesMenus" class="btn btn-custom btn-block btn-lg text-start" > 
-              <img id="botoesImg" src="/img/pencil-fill.svg" alt="Icone Editar">
-              Criar Curso  
-            </a>
-          </div>
-          @endif
-          @endauth
           <div class="col-md-6">
             <a href="/calculator" id="botoesMenus" class="btn btn-custom btn-block btn-lg text-start"> 
               <img id="botoesImg" src="\img\calculator.svg" alt="Icone Perfil">
-              Calculadora
+                Calculadora
             </a>
           </div>
+
+          @auth
+           <!-- <div class="col-md-6">
+              <a href="/profile" id="botoesMenus" class="btn btn-custom btn-block btn-lg text-start"> 
+                <img id="botoesImg" src="/img/file-person.svg" alt="Icone Perfil">
+                Meu Perfil
+              </a>
+            </div> -->
+
+            <div class="col-md-6">
+              <a href="/dashboard" id="botoesMenus" class="btn btn-custom btn-block btn-lg text-start"> 
+                <img id="botoesImg"  src="/img/card-list.svg" alt="Icone Cursos"> 
+                Meus Cursos 
+              </a>
+            </div>
+
+            @if (auth()->user()->usertype ==2)
+              <div class="col-md-6">
+                <a href="/courses/create" id="botoesMenus" class="btn btn-custom btn-block btn-lg text-start" > 
+                  <img id="botoesImg" src="/img/pencil-fill.svg" alt="Icone Editar">
+                  Criar Curso  
+                </a>
+              </div>
+            @endif
+          @endauth
+      
         </div>
       </div>
-      
-      
-      
+
       <!-- Creditos -->
       <div class="container">
       
@@ -139,8 +135,12 @@
 
         <footer class="py-3 my-4">
           <ul class="nav justify-content-center border-bottom pb-3 mb-3"> </ul>
-            <p class="text-center text-muted">
-            &copy; 2023 PiggyLearn, Inc </p>
+          
+          <p class="text-center align-middle">
+            <a href="/credits" > 
+              Créditos á &copy; 2023 PiggyLearn Inc. 
+            </a>
+          </p>
         </footer>
 
       </div>
@@ -162,19 +162,30 @@
                 </p>
               </div>
             </div>
+
+            <script>
+              document.addEventListener('DOMContentLoaded', function() {
+                  var mensagemCard = document.getElementById('mensagemCard');
+          
+                  // Função para ocultar o card
+                  function ocultarCard() {
+                      mensagemCard.style.display = 'none';
+                  }
+          
+                  // Adicionar evento de clique para ocultar o card
+                  document.addEventListener('click', ocultarCard);
+                  
+                  // Impedir que o evento de clique no card se propague e seja capturado pelo documento
+                  mensagemCard.addEventListener('click', function(event) {
+                      event.stopPropagation();
+                  });
+              });
+            </script>
           @endif
     
       @yield('content')
-      
-    </div>       
+        </div>       
   </main>
-  <script src="{{ asset('/sw.js') }}"></script>
-  <script>
-      if (!navigator.serviceWorker.controller) {
-          navigator.serviceWorker.register("/sw.js").then(function (reg) {
-              console.log("Service worker has been registered for scope: " + reg.scope);
-          });
-      }
-  </script>
+
 </body>   
 </html>

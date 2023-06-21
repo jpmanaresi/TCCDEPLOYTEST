@@ -1,10 +1,12 @@
 *{
     font-family:'Inria Sans', sans-serif;
+    font-weight: normal;
 } /* Fonte de todo html */    
 
 #corpot
 {
-    margin-top: 8rem;
+    margin-top: 7rem;
+    margin-bottom: 2rem;
 } /* Divisão entre o topo da pagina com o conteudo */
 
 #tituloInicialp
@@ -23,32 +25,49 @@
     background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
     /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
+
+.correctanswer {
+    background-color: #49e74986;
+    color: #008d6e;
+} /* Questão Se for Certa */
   
+.wronganswer {
+    background-color: #e7494986;
+    color: #a50000;
+} /* Questão Se for Errada */
+
 #imgBotoes {
     padding-bottom: 2px;
-} /* Formataõ das imagens dentro dos botões */
+}
+
+
+
+
+
 
 /* main.blade */
+
     #mensagem {
         margin-bottom: 0px;
-    }  /* Formtação da caixa de mensagem */
+        text-align: center;
+    }  /* Formtação do texto da caixa de mensagem */
 
     #mensagemCard {
         position: fixed;
-        top: 100%;
+        top: 10%;
         left: 50%;
         transform: translateX(-50%);
         z-index: 9999;
-        background-color: #03d649b6;
+        background-color: #03d649e5;
         color: #ffffff;
         font-size: 20px;
-        align-items: center;
+        
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         color: #fff;
-        animation: slideDown 0.5s forwards, fadeOut 0.5s 4.5s forwards;
-        width: 300px; /* Defina a largura desejada */
-        max-width: 90%; /* Define a largura máxima para evitar esticamento em telas pequenas */
-    }  
+        animation: slideDown 0.5s forwards, fadeOut 0.5s 3s forwards;
+        width: 300px;
+        max-width: 90%;
+    } /* Formataõ das mensagens */
     @keyframes slideDown {
         0% {
         top: -100%;
@@ -63,15 +82,17 @@
         100% {
           opacity: 0;
         }
-    }
+    } /* Formataõ das mensagens */
+
+
 
     /* NavBar (NB) */
 
         #nav.navbar {
-            height: 50px;
+            height: 60px;
             padding-top: 5px;
             background-color: #1c1b1d;
-            border: 0;
+            
         } /* Cor e borda */
 
         #botoesEntrarNav.btn-custom {
@@ -121,7 +142,7 @@
         #sidebar-linhaCima.btn-custom {
             background-color: #1c1b1d;
             height: 50px;
-            border: 0;
+            
         } /* Barra superior  */
 
         #imgOpcoes {
@@ -188,8 +209,8 @@
     } /* Index2 = Sem Destaque */
         
     #cardBodyIndex1 {
-        border: 0;
         border-radius: 10px;
+        border: none;
         font-weight: bold;
         padding-left: 3px;
         padding-bottom: 3px;
@@ -214,7 +235,7 @@
     } /* Tirando o sublinhado azul da descrição? */
 
     #cardBodyIndex2 {
-        border: 0;
+        
         border-radius: 10px;
         font-weight: normal;
         padding-left: 3px;
@@ -276,7 +297,6 @@
 
 /* login.blade - Area de Login */
 
-
         #tituloPlaceH {
             padding-bottom: 5px;
             padding-left: 9px;
@@ -303,7 +323,6 @@
         #botaoEntrar.btn-custom {
             background-color: #14b69b;
             color: #ffffff;
-            border: none;
             width: 100%;
             margin-bottom: 16px;
         } /* Cor do botão de Entrar */
@@ -319,7 +338,6 @@
         #botaoCriarCo2.btn-custom {
             background-color: #1aa891;
             color: #ffffff;
-            border: none;
             width: 100%;
         } /* Cor do botão de Entrar */
 
@@ -334,7 +352,6 @@
         #botaoCriarCo.btn-custom {
             background-color: #2d79d1;
             color: #ffffff;
-            border: none;
             width: 100%;
         } /* cor do botão de Criar Conta */
 
@@ -348,10 +365,8 @@
             } /* Animação do botão de Entrar */
 
         #botaoEsqueciS.btn-custom {
-            
             color: #ffffff;
             font-style: italic;
-            border: none;
             width: 80%;
             margin-right: 9px;
             margin-bottom: 18px;
@@ -384,7 +399,7 @@
         } /* Formatação do titulo do card */
 
         #cardLogin {
-            border: 0;
+            border: none;
             border-radius: 5px;
             padding: 0%;
             color: #ffffff; 
@@ -393,7 +408,7 @@
         } /* Formatação do header da caixa de login */
 
         #cardLogin2 {
-            border: 0;
+            
             border-radius: 5px;
             padding: 0%;
             color: #ffffff; 
@@ -406,7 +421,7 @@
 
 
 
-/* courses.blade - Criar Curso/Aula/Avaliação/Teste - Editar Curso/Aula/Avaliação/Teste*/
+/* courses.blade - Criar Curso/Aula/Avaliação/Teste/Questão - Editar Curso/Aula/Avaliação/Teste/Questão */
 
     #tituloCriarCurso {
         text-align: start; 
@@ -432,14 +447,16 @@
     } /* Formatção do placeholder da Descrição */
 
     #TituloTabelaDepoisD {
-        margin: 15px; 
+        margin: 9px; 
         font-weight: bold;
     } /* Titulo depois da Descrição */
 
     #botaoVoltar.btn-custom {
         background-color: #42129b;
         color: #ffffff;
-        padding: 7px
+        padding: 4px;
+        margin-top: 9px;
+        margin-bottom: 9px;
     }
     
         #botaoVoltar.btn-custom:hover {
@@ -454,24 +471,29 @@
             width: 130px;
             background-color: #7e0a7e;
             color: #ffffff;
-            border: 0; 
         } /* Cor do botão criar Aula */ 
 
         #botaoAdicionarAula.btn-custom:hover {   
             background-color: #500d50;
             color: #ffffff;
             font-weight: bold;
-            border: 0; 
             transform: scale(1.01);
             transition: all 0.01s ease-in-out;
-        }   .animated-button {
+        }   
+        
+        .animated-button {
             background-image: linear-gradient(to left, #8b5bff, #ff4b8b);
             background-size: 200% 100%;
+            margin-top: 9px;
+            margin-bottom: 9px;
+            color: #ffffff;
             transition: background-position 0.5s;
             animation: gradientAnimation 2s infinite;
         } /* Animação do botão criar Aula */ 
         
         .animated-button:hover {
+            transform: scale(1.01);
+            transition: all 0.01s ease-in-out;
             animation: gradientAnimation 2s infinite;
 
         }   @keyframes gradientAnimation {
@@ -493,14 +515,14 @@
         margin-top: 10px;
         margin-bottom: 5px;
         color: #ffffff;
-        border: 0; 
+         
     } /* Cor do botão criar Curso */ 
     
         #botaoCriarC.btn-custom:hover {  
             background-color: #008d6e;
             color: #ffffff;
             font-weight: bold;
-            border: 0;
+            
             transform: scale(1.01);
             transition: all 0.01s ease-in-out;
         } /* Animação do botão criar Curso */ 
@@ -513,14 +535,14 @@
         margin-right: 5px;
         margin-bottom: 5px;
         color: #ffffff;
-        border: 0; 
+         
     } /* Cor do botão Criar Avaliação e Voltar */ 
 
         #botaoCriarAV.btn-custom:hover {  
             background-color: #25085a;;
             color: #ffffff;
             font-weight: bold;
-            border: 0;
+            
             transform: scale(1.01);
             transition: all 0.01s ease-in-out;
         } /* Animação do botão Criar Avaliação e Voltar */        
@@ -530,49 +552,28 @@
         width: 130px;
         background-color: #7e0a7e;
         color: #ffffff;
-        border: 0; 
+         
     } /* Cor do botão criar Aula */ 
     
         #botaoAdicionarAula.btn-custom:hover {   
             background-color: #500d50;
             color: #ffffff;
             font-weight: bold;
-            border: 0; 
             transform: scale(1.01);
             transition: all 0.01s ease-in-out;
         } /* Animação do botão criar Aula */  
         
-        .animated-button {
-            background-image: linear-gradient(to left, #8b5bff, #ff4b8b);
-            background-size: 200% 100%;
-            transition: background-position 0.5s;
-            animation: gradientAnimation 2s infinite;
-        } /* Animação do botão criar Aula */ 
-            
-        .animated-button:hover {
-            animation: gradientAnimation 2s infinite;
-    
-        }   @keyframes gradientAnimation {
-        0% {
-            background-position: right;
-        }
-        50% {
-            background-position: left;
-        }
-        100% {
-            background-position: right;
-        }
-        } /* Animação do botão criar Aula */ 
-        
+       
     #textoSemAula {
         margin: 10px;
+        margin-top: 10px;
         font-size: 15px;
         font-family: 'Inria Sans', sans-serif;
         color: #000000;
         font-weight: bold;
     } /* Formatação da descrição encima do placesholder */
 
-    #tornarVisisel {
+    #TestoTornarV {
         padding-left: 6px;
     } /* Separando o texto da check */    
 
@@ -583,7 +584,7 @@
     } /* Corpo da Area dos Cursos */
 
     #corpoCriarCurso {
-        border: 0;
+        
         border-radius: 5px;
         font-weight: bold;
         margin: 9px;
@@ -591,7 +592,7 @@
         padding-left: 10px;
         padding-right: 10px;
         color: #ffffff; 
-        background: linear-gradient(270deg, rgba(255, 64, 129, 0.6) 0%, rgba(255, 64, 129, 0) 100%), #7C4DFF;
+        background: linear-gradient(to bottom right, rgb(187, 64, 212) 10%,rgb(39, 11, 110) 100%);
         box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.281);
     } /* Corpo do Criar Curso */
 
@@ -600,13 +601,142 @@
         padding-right: 0px;
     } /* Formatação do container */
 
+    /* testes */
+    
+    #tituloCriarQ {
+        text-align: center; 
+        font-size: 18px;
+        padding: 5px; 
+        font-weight: bold;
+    } /* Centralizando o titulo de criar questões */
+
+    #placeholderCriarQ.d-flex {
+        text-align: center; 
+        width: 130px; /* Ajuste o valor para aumentar ou diminuir o tamanho */
+        font-size: 14px;
+        padding: 5px; 
+        font-weight: bold;
+        position: fixed;
+        top: 50%;
+        left: 60%;
+        transform: translate(-50%, -50%);
+    } /* Centralizando o placeholder de criar questões */
+
+    #tituloOpcoes {
+        align-self: center;
+        font-size: 18px;
+        padding: 5px; 
+        font-weight: bold;
+        color: #000000;
+    } /* Titulo das opções */
+
+    #placeholderOpcoes {
+        border-color: #b4b4b4;
+        margin-bottom: 9px;
+    } /* Placeholders das opções */
+
+    #CheckAlternativaC  {
+        border-color: #000000;
+        margin-top: 0px;
+        margin-left: 9px;
+    } /* Formatando o check de Alternativa Correta */  
+
+    #textoAlternativaC {
+        color: #000000;
+        margin-bottom: 0px;
+    } /* Separando o texto da check de Alternativa Correta */  
+
+    #textoRespostaQ {
+        padding-top: 6px;
+        word-wrap: break-word;
+        color: #000000;
+        margin-right: 18px;
+        margin-left: 16px;
+    } /* texto Resposta Questão */
+
 /* courses */
 
 
 
 
+/* Show.blade - Mostrar Curso / Mostrar Aula / Mostrar Avaliação / Mostrar Questões */
 
-/* dashboard.blade */
+#tituloMostrarC {
+    text-align: center;
+    word-wrap: break-word;
+    font-size: 30px;
+    padding: 5px; 
+    font-weight: bold;
+} /* titulo Mostrar Curso */
+
+#descricaoMostrarT {
+    text-align: center;
+    font-size: 20px;
+} /* Mostar descrição Titulo */
+
+#descricaoMostrarP {
+    text-align: justify;
+    color: #000000;
+    font-size: 16px;
+    padding: 10px;
+    margin-bottom: 0px;
+} /* Mostar descrição Paragrafo */
+
+.incomplete {
+    opacity: 0.5; 
+} /* Defina o valor de opacidade dos conteudo incompletos */
+
+#botaoRever.btn-custom {
+    background-color: #7a4bd1;
+    color: #ffffff;
+    padding: 4px;
+    margin-top: 9px;
+     margin-bottom: 9px;
+} /* Cor do botão de rever */
+    
+    #botaoRever.btn-custom:hover {
+        background-color: #4b2d83;
+        color: #ffffff;
+        transform: scale(1.01);
+        transition: all 0.01s ease-in-out;
+    } /* Animação  do botão de rever */
+
+
+
+#botaoContinuar.btn-custom {
+
+}
+
+
+/* Show */
+
+
+
+
+
+
+/* calc.blade - Calculadora */
+
+    #placeholderCalc {
+        font-weight: bold;
+        color: #000000;
+        font-size: 14px;
+        border-color: #b4b4b4;
+        margin-bottom: 9px;
+    } /* Formatção do placeholder do Titulo da Calculadora */
+
+    #placeholderCalc:invalid {
+        border-color: red;
+        background-color: rgba(255, 71, 71, 0.5);
+    } /* Formatção do placeholder do Titulo da Calculadora caso o usuario não forneça numeros */
+
+/* Calculadora */
+
+
+
+
+
+/* dashboard.blade - Meus Cursos */
 
     #tituloDash {
         margin-bottom: 10px; 
@@ -621,6 +751,7 @@
         margin-left: 9px;
         margin-bottom: 6px;
         color: #5a5a5a;
+        
     }
     #corpoContainerDash {
         margin-left: 0px; 
@@ -657,12 +788,15 @@
         
     } /* Formatação das letras */
 
-        #linkDashboard.custom-link-animation {
-            margin: 0%;
-            font-weight: bold;
-            text-transform: uppercase;
-            text-decoration: none;
-            animation: colorChange 4s infinite;
+    #linkDashboard.custom-link-animation {
+        margin: 0%;
+        font-size: 14px;
+        max-height: 15px;
+        word-wrap: break-word;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-decoration: none;
+        animation: colorChange 4s infinite;
         }   @keyframes colorChange {
             0% {
                 color: #800080;
@@ -717,7 +851,7 @@
     } /* Formatação da Tabela */
 
     #corpoDash {
-        border: 0;
+        
         border-radius: 5px;
         padding-right: 20px;
         padding-left: 20px;
@@ -727,8 +861,6 @@
         background: linear-gradient(270deg, rgba(255, 64, 129, 0.6) 0%, rgba(255, 64, 129, 0) 100%), #7C4DFF;
         box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.281);
     } /* Formatação do corpo do DashBoard */
-
-
 
 /* dashboard */
 
